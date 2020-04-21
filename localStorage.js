@@ -18,5 +18,17 @@ window.addEventListener('DOMContentLoaded', event => {
         // adding list item to ul element
         noteList.appendChild('li');
     }
-    
+    // Invoking listMaker function
+    listMaker();
+
+    // Checking form for submit event
+    form.addEventListener('submit', event => {
+        // Preventing form from submitting to server
+        event.preventDefault();
+
+        // Setting input value to an empty string
+        listMaker(inputBox.value);
+        inputBox.value = '';
+    })
+
 })
